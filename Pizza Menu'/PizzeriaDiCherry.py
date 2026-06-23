@@ -18,6 +18,15 @@ Pizza's:                     Prices:
 . FRUTTI DI MARE            |   8.00 £
 
 
+Side's:
+. FRENCH FRIES              |   2.50 £
+. CURLY FRIES               |   3.00 £
+. 4 FILLED JALAPENO         |   3.50 £
+. 4 PRAWN SPIEDINI          |   4.50 £
+. FRITTO MISTO              |   7.00 £
+. SALMON TARTARE            |   8.00 £
+
+
 Deserts:
 . PIZZA NUTELLA             |   4.00 £ 
 . TIRAMISU'                 |   4.00 £
