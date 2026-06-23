@@ -23,4 +23,18 @@ Dolci:
 . TORTA CHERRY              |   5.00 €    
 *************************
 
+
+Bevande: 
+. ACQUA MINERALE             |   1.00 €
+. ACQUA FRIZZANTE            |   1.50 €
+. COCA COLA                  |   2.00 € 
+. SPRITE                     |   2.00 €
+. FANTA                      |   2.00 €
+. ESTATHE'                   |   1.50 €
+. MOJITO ANALCOLOLICO        |   3.00 €
+
+
+
+
+
 """
