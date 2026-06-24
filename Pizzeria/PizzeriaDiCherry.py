@@ -49,9 +49,16 @@ Drinks:
 """
 
 # -Welcome brief- User INPUT starting point 
-print ("Welcome to Cherry's Pizzeria!")
-name = input(str("Enter your name to see our menu: "))
-print(f"This is our menù {name}")
-print(menu)
+welcome ="""
+
+********************************
+Welcome to - CHERRY'S PIZZERIA -
+
+      つ ◕_◕ ༽つ🍅🧀🍕
+
+********************************
+
+"""
+
 
 
