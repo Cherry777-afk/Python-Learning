@@ -48,7 +48,7 @@ Drinks:
 
 """
 
-# -Welcome brief- User INPUT starting point 
+# -Welcome brief-  
 welcome ="""
 
 ********************************
@@ -59,6 +59,60 @@ Welcome to - CHERRY'S PIZZERIA -
 ********************************
 
 """
+print(welcome)
+
+#-user starting point- insert INPUT name + accomodation message
+name = str(input("Customer name: "))
+
+accomodate = f"""
+Good evening, {name}
+my name is Lilly :3
+and i will be serving you today
+
+"""
+print(accomodate)
+
+#table diplay UI
+table = """
+
+___________________       _______________________
+                                                
+1 ⛩ ┬─┬ ⛩         2   𓊯𓀻          3 ⛩ ┬─┬ ⛩ 
+                                                
+4    𓊯𓀻           5 ⛩ ┬─┬ ⛩       6   𓊯𓀻
+
+7 ⛩ ┬─┬ ⛩         8   𓊯𓀻          9 ⛩ ┬─┬ ⛩ 
+_________________________________________________
+
+"""
+print(table)
+
+
+#user will input table n^ 
+#if conditions for occupied tables
+occupied_tables =  [2, 4, 6, 8]
+while True:
+    try: 
+        picktable = int(input("Which table would you like to pick? "))
+
+        #table does not exist
+        if picktable < 1 or picktable > 8:
+            print("Table does not exist... try again")
+            continue
+        
+        #table is occupied by another customer 
+        if picktable in occupied_tables:
+            print("This table is busy, pick again")
+            continue
+        
+        #correct table selection 
+        print(f"I will assign you to table n^ {picktable}")
+        break
+
+    except ValueError:
+        print("Please enter a valid number")
+
+
 
 
 
