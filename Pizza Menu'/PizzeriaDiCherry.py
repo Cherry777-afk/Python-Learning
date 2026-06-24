@@ -1,7 +1,3 @@
-# User INPUT starting point 
-
-
-
 menu = """ 
 
        - CHERRY'S PIZZERIA -
@@ -50,8 +46,12 @@ Drinks:
 . NON-ALCOHOLIC MOJITO       |   4.00 £
 . NON-ALCOHOLIC SPRITZ       |   4.50 £
 
-
-
-
-
 """
+
+# -Welcome brief- User INPUT starting point 
+print ("Welcome to Cherry's Pizzeria!")
+name = input(str("Enter your name to see our menu: "))
+print(f"This is our menù {name}")
+print(menu)
+
+
