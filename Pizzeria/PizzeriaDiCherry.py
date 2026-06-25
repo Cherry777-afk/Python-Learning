@@ -67,52 +67,91 @@ name = str(input("Customer name: "))
 accomodate = f"""
 Good evening, {name}
 my name is Lilly :3
-and i will be serving you today
-
+and i will be serving you today !!
 """
 print(accomodate)
 
 #table diplay UI
 table = """
-
-___________________       _______________________
+__________________       _________________________
                                                 
-1 ⛩ ┬─┬ ⛩         2   𓊯𓀻          3 ⛩ ┬─┬ ⛩ 
+1|  ⛩ ┬─┬ ⛩        2|  𓊯𓀻             3|  ⛩ ┬─┬ ⛩ 
                                                 
-4    𓊯𓀻           5 ⛩ ┬─┬ ⛩       6   𓊯𓀻
+4|   𓊯𓀻             5| ⛩ ┬─┬ ⛩        6|   𓊯𓀻
 
-7 ⛩ ┬─┬ ⛩         8   𓊯𓀻          9 ⛩ ┬─┬ ⛩ 
-_________________________________________________
+7|  ⛩ ┬─┬ ⛩        8|   𓊯𓀻            9|  ⛩ ┬─┬ ⛩ 
+___________________________________________________
 
 """
-print(table)
 
-
-#user will input table n^ 
-#if conditions for occupied tables
-occupied_tables =  [2, 4, 6, 8]
+#asking in the user wants to take table seat show table
 while True:
-    try: 
-        picktable = int(input("Which table would you like to pick? "))
-
-        #table does not exist
-        if picktable < 1 or picktable > 8:
-            print("Table does not exist... try again")
-            continue
-        
-        #table is occupied by another customer 
-        if picktable in occupied_tables:
-            print("This table is busy, pick again")
-            continue
-        
-        #correct table selection 
-        print(f"I will assign you to table n^ {picktable}")
+    try:
+      viewtable = str(input("- Would do like to take a seat? ")).lower()
+      if viewtable in ["yes", "yeah", "sure"]:
+        print(table)
+        eat_inside = True
         break
 
+      #if user says no to table seat and wants to take-away, show the menu
+      elif viewtable in ["no", "nah", "nope"]:
+        takeAway = input(str("- Would you like to view menu and take-away? ")).lower()
+
+        if takeAway in ["yes", "yeah", "sure"]:
+          print("********************************")
+          print(menu)
+          eat_inside = False
+          break
+
+        else:
+           print("Ok, no menu' shown")
+           eat_inside = False
+           break
+        
+      else:
+        print("Please answer yes or no.\n")
+
     except ValueError:
-        print("Please enter a valid number")
+        print("Enter a valid option.\n")
 
 
 
+#table selection if viewtable == yes
+#user will input table n^ 
+#if conditions for already occupied tables
+occupied_tables =  [2, 4, 6, 8]
+
+while eat_inside ==  True:
+  try: 
+      pickTable = int(input("Which table Number would you like to pick? "))
+      print("")
+
+      #table does not exist
+      if pickTable < 1 or pickTable > 8:
+        print("Table does not exist... try again")
+        continue
+        
+
+        #table is occupied by another customer 
+      if pickTable in occupied_tables:
+        print("This table is busy, pick again")
+        continue 
+
+      print(f"I will walk you through to table N'{pickTable}")
+      break
+
+  except ValueError:
+    print("Please enter a valid number")
 
 
+#the user will now be assigned to his table (UI)
+if eat_inside == True:
+ chosenTable = f"""
+
+{pickTable} ⛩ ┬─┬ ⛩  <-- Table booked by: {name}
+
+      -This will be your table for today
+          and this is our Menu' :
+"""
+print(chosenTable)
+print (menu)
