@@ -73,14 +73,14 @@ print(accomodate)
 
 #table diplay UI
 table = """
-__________________       _________________________
+_______________________       _________________________
                                                 
 1|  ⛩ ┬─┬ ⛩        2|  𓊯𓀻             3|  ⛩ ┬─┬ ⛩ 
                                                 
 4|   𓊯𓀻             5| ⛩ ┬─┬ ⛩        6|   𓊯𓀻
 
 7|  ⛩ ┬─┬ ⛩        8|   𓊯𓀻            9|  ⛩ ┬─┬ ⛩ 
-___________________________________________________
+_______________________________________________________
 
 """
 
@@ -89,6 +89,8 @@ while True:
     try:
       viewtable = str(input("- Would do like to take a seat? ")).lower()
       if viewtable in ["yes", "yeah", "sure"]:
+        print("")
+        print("********************************************************")
         print(table)
         eat_inside = True
         break
@@ -98,7 +100,8 @@ while True:
         takeAway = input(str("- Would you like to view menu and take-away? ")).lower()
 
         if takeAway in ["yes", "yeah", "sure"]:
-          print("********************************")
+          print("")
+          print("**************************************************")
           print(menu)
           eat_inside = False
           break
@@ -127,7 +130,7 @@ while eat_inside ==  True:
       print("")
 
       #table does not exist
-      if pickTable < 1 or pickTable > 8:
+      if pickTable < 1 or pickTable > 9:
         print("Table does not exist... try again")
         continue
         
@@ -146,12 +149,79 @@ while eat_inside ==  True:
 
 #the user will now be assigned to his table (UI)
 if eat_inside == True:
- chosenTable = f"""
+    chosenTable = f"""
 
-{pickTable} ⛩ ┬─┬ ⛩  <-- Table booked by: {name}
+______________      __________________
 
-      -This will be your table for today
-          and this is our Menu' :
+{pickTable}|  ⛩ ┬─┬ ⛩  <-- {name}'s table
+
+   -This will be your table for today
+______________________________________
+
 """
-print(chosenTable)
-print (menu)
+    print(chosenTable)
+
+closing = """
+**YOU HAVE BEEN ESCORTED OUT OF THE PIZZERIA**
+
+                  |
+            _____ V ______
+           |   pizzeria   | 
+           |    CLOSED    |
+           |______________| 
+
+           """         
+
+while eat_inside == True:
+  try:
+      tableMenu = str(input("Would you like to see the menu? ")).lower()
+
+      #if customers says YES show menu
+      if tableMenu in ["yes", "yeah", "sure"]:
+        print (menu)
+        break
+
+      #if customer says no 
+      elif tableMenu in ["no", "nah", "nope"]:
+          company = str(input("Are you waiting for someone? ")).lower()
+
+          #if they said no and are waiting for company
+          if company in ["yes", "yeah", "sure"]:
+            print("")
+            print("No problem! i will come back later")
+        
+            #the company arrives
+            companyArrives = """
+
+    *15 minutes later*
+............................
+    *Company has arrived*
+            𐦂𖨆𐀪𖠋
+            """       
+            print(companyArrives)
+
+            print("***************************************")
+            print("Menu has now been brought to your table")
+            print("***************************************")
+            print("")
+
+
+            openMenu = str(input("**Would you like to open menu' (yes / no)** : ")).lower()
+
+            if openMenu in ["yes", "yeah", "sure"]:
+              print(menu)
+              break
+
+            elif openMenu in ["no", "nah", "nope"]:                 
+              print(closing)
+              break
+
+            else:
+              print("answer yes/no")
+
+          else:
+            print(closing)
+            break
+
+  except ValueError:
+    print("Insert correct Value !")
